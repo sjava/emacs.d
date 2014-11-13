@@ -2,6 +2,7 @@
 (require 'evil)
 (evil-mode 1)
 (require-package 'evil-nerd-commenter)
+(require 'evil-nerd-commenter)
 (evilnc-default-hotkeys)
 
 (require-package 'key-chord)
