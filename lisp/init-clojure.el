@@ -4,6 +4,7 @@
 (require-package 'clojure-mode)
 (require-package 'cljsbuild-mode)
 (require-package 'elein)
+(require-package 'rainbow-blocks)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Slime with Clojure
@@ -32,6 +33,7 @@
 (after-load 'clojure-mode
   (add-hook 'clojure-mode-hook 'sanityinc/lisp-setup)
   (add-hook 'clojure-mode-hook 'evil-paredit-mode)
+  (add-hook 'clojure-mode-hook 'rainbow-blocks-mode)
   (add-hook 'clojure-mode-hook 'subword-mode))
 
 

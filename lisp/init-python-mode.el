@@ -11,5 +11,5 @@
 
 (add-hook 'python-mode-hook 'jedi:setup)
 (setq jedi:complete-on-dot t)
-
+(add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
 (provide 'init-python-mode)
