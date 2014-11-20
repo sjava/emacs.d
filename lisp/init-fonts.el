@@ -9,9 +9,17 @@
   (when sanityinc/force-default-font-for-symbols
     (set-fontset-font "fontset-default" 'symbol (face-attribute 'default :family))))
 
-(add-hook 'after-init-hook 'sanityinc/maybe-use-default-font-for-symbols)
+;;(add-hook 'after-init-hook 'sanityinc/maybe-use-default-font-for-symbols)
+;;中文与外文字体设置
+;; Setting English Font
+(set-face-attribute
+'default nil :font "Ubuntu Mono 12")
+;; Chinese Font
+(dolist (charset '(kana han symbol cjk-misc bopomofo))
+(set-fontset-font (frame-parameter nil 'font)
+charset
+(font-spec :family "WenQuanYi Micro Hei Mono" :size 14)))
 
-
 ;;; Changing font sizes
 
 (require 'cl)
