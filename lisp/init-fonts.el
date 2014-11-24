@@ -13,7 +13,7 @@
 ;;中文与外文字体设置
 ;; Setting English Font
 (set-face-attribute
-'default nil :font "Ubuntu Mono 12")
+'default nil :font "Monaco 10")
 ;; Chinese Font
 (dolist (charset '(kana han symbol cjk-misc bopomofo))
 (set-fontset-font (frame-parameter nil 'font)

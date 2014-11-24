@@ -13,4 +13,7 @@
 (key-chord-define evil-insert-state-map ",," 'evil-normal-state)
 (key-chord-define evil-replace-state-map ",," 'evil-normal-state)
 
+(require 'evil-matchit)
+(global-evil-matchit-mode 1)
+
 (provide 'init-evil)
