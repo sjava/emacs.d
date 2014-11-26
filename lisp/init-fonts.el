@@ -1,24 +1,39 @@
 ;;; Character sets
 
-(defcustom sanityinc/force-default-font-for-symbols nil
+(defcustom sanityinc/force-default-font-for-symbols 1
   "When non-nil, force Emacs to use your default font for symbols."
   :type 'boolean)
+
+; (defun sanityinc/maybe-use-default-font-for-symbols ()
+;   "Force Emacs to render symbols using the default font, if so configured."
+;   (when sanityinc/force-default-font-for-symbols
+;     (set-fontset-font "fontset-default" 'symbol (face-attribute 'default :family))))
 
 (defun sanityinc/maybe-use-default-font-for-symbols ()
   "Force Emacs to render symbols using the default font, if so configured."
   (when sanityinc/force-default-font-for-symbols
-    (set-fontset-font "fontset-default" 'symbol (face-attribute 'default :family))))
+    (set-face-attribute
+      'default nil :font "Monaco 10")
+    ; Chinese Font
+    (dolist (charset '(kana han symbol cjk-misc bopomofo))
+      (set-fontset-font (frame-parameter nil 'font)
+                        charset
+                        (font-spec :family "WenQuanYi Micro Hei Mono" :size 14)))
+    ))
 
-;;(add-hook 'after-init-hook 'sanityinc/maybe-use-default-font-for-symbols)
+(add-hook 'after-init-hook 'sanityinc/maybe-use-default-font-for-symbols)
 ;;中文与外文字体设置
 ;; Setting English Font
-(set-face-attribute
-'default nil :font "Monaco 10")
+;(set-face-attribute
+; 'default nil :font "Monaco 10")
+ 
+
 ;; Chinese Font
-(dolist (charset '(kana han symbol cjk-misc bopomofo))
-(set-fontset-font (frame-parameter nil 'font)
-charset
-(font-spec :family "WenQuanYi Micro Hei Mono" :size 14)))
+; (dolist (charset '(kana han symbol cjk-misc bopomofo))
+ ;(set-fontset-font (frame-parameter nil 'font)
+; charset
+; (font-spec :family "WenQuanYi Micro Hei Mono" :size 14)))
+
 
 ;;; Changing font sizes
 
@@ -57,7 +72,5 @@ by the :height face attribute."
 
 (global-set-key (kbd "C-M-=") 'sanityinc/increase-default-font-height)
 (global-set-key (kbd "C-M--") 'sanityinc/decrease-default-font-height)
-
-
 
 (provide 'init-fonts)

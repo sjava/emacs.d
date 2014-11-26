@@ -3,8 +3,6 @@
 
 (require-package 'color-theme-sanityinc-solarized)
 (require-package 'color-theme-sanityinc-tomorrow)
-(require-package 'zenburn-theme)
-(require-package 'molokai-theme)
 
 ;;------------------------------------------------------------------------------
 ;; Old-style color theming support (via color-theme.el)
@@ -47,11 +45,8 @@ ignored: use `custom-enabled-themes' instead."
 ;;------------------------------------------------------------------------------
 
 ;; If you don't customize it, this is the theme you get.
+;;(setq-default custom-enabled-themes '(sanityinc-solarized-light))
 (setq-default custom-enabled-themes '(sanityinc-solarized-dark))
-;;(setq-default custom-enabled-themes '(zenburn))
-
-;;(setq-default custom-enabled-themes '(molokai))
-
 ;; Ensure that themes will be applied even if they have not been customized
 (defun reapply-themes ()
   "Forcibly load the themes listed in `custom-enabled-themes'."
