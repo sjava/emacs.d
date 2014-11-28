@@ -13,7 +13,7 @@
   "Force Emacs to render symbols using the default font, if so configured."
   (when sanityinc/force-default-font-for-symbols
     (set-face-attribute
-      'default nil :font "Monaco 10")
+      'default nil :font "Ubuntu Mono 12")
     ; Chinese Font
     (dolist (charset '(kana han symbol cjk-misc bopomofo))
       (set-fontset-font (frame-parameter nil 'font)

@@ -58,6 +58,7 @@
                ac-source-dictionary
                ac-source-words-in-buffer
                ac-source-words-in-same-mode-buffers
+               ac-source-jedi-direct
                ac-source-words-in-all-buffer))
 
 (dolist (mode '(magit-log-edit-mode
