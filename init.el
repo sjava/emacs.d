@@ -67,7 +67,7 @@
 (require 'init-mmm)
 
 (require 'init-editing-utils)
-(require 'init-autopair)
+; (require 'init-autopair)
 
 (require 'init-vc)
 (require 'init-darcs)
