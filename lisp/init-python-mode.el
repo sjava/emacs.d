@@ -21,9 +21,11 @@
 (require-package 'pip-requirements)
 
 (require-package 'py-autopep8)
-(require'py-autopep8)
+(require 'py-autopep8)
 (add-hook 'before-save-hook 'py-autopep8-before-save)
 
+(require-package 'jedi)
+(require 'jedi)
 (add-hook 'python-mode-hook 'jedi:setup)
 (setq jedi:complete-on-dot t)
 (add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
