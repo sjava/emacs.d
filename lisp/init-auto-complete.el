@@ -12,7 +12,7 @@
 (add-to-list 'completion-styles 'initials t)
 ;; Stop completion-at-point from popping up completion buffers so eagerly
 (setq completion-cycle-threshold 5)
-
+(define-key ac-mode-map (kbd "<f8>") 'auto-complete)
 ;; TODO: find solution for php, haskell and other modes where TAB always does something
 
 (setq c-tab-always-indent nil
@@ -58,7 +58,6 @@
                ac-source-dictionary
                ac-source-words-in-buffer
                ac-source-words-in-same-mode-buffers
-               ac-source-jedi-direct
                ac-source-words-in-all-buffer))
 
 (dolist (mode '(magit-log-edit-mode

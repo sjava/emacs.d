@@ -24,9 +24,20 @@
 (require 'py-autopep8)
 (add-hook 'before-save-hook 'py-autopep8-before-save)
 
-(require-package 'jedi)
-(require 'jedi)
-(add-hook 'python-mode-hook 'jedi:setup)
-(setq jedi:complete-on-dot t)
+; (require-package 'jedi)
+; (require 'jedi)
+; (add-hook 'python-mode-hook 'jedi:setup)
+; (setq jedi:complete-on-dot t)
+
+
+(require-package 'anaconda-mode)
+(require-package 'ac-anaconda)
+(require 'anaconda-mode)
+(require 'ac-anaconda)
+(add-hook 'python-mode-hook 'anaconda-mode)
+(add-hook 'python-mode-hook 'ac-anaconda-setup)
+(add-hook 'python-mode-hook 'eldoc-mode)
+
 (add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
+
 (provide 'init-python-mode)
