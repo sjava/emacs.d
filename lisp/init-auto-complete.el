@@ -2,7 +2,8 @@
 (require 'auto-complete-config)
 (global-auto-complete-mode t)
 (setq-default ac-expand-on-auto-complete nil)
-(setq-default ac-auto-start nil)
+(setq-default ac-auto-start t)
+(setq ac-auto-start 2)
 (setq-default ac-dwim nil) ; To get pop-ups with docs even if a word is uniquely completed
 
 ;;----------------------------------------------------------------------------
@@ -12,7 +13,7 @@
 (add-to-list 'completion-styles 'initials t)
 ;; Stop completion-at-point from popping up completion buffers so eagerly
 (setq completion-cycle-threshold 5)
-(define-key ac-mode-map (kbd "<f8>") 'auto-complete)
+;;(define-key ac-mode-map (kbd "<f8>") 'auto-complete)
 ;; TODO: find solution for php, haskell and other modes where TAB always does something
 
 (setq c-tab-always-indent nil
