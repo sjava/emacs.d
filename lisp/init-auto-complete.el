@@ -3,7 +3,7 @@
 (global-auto-complete-mode t)
 (setq-default ac-expand-on-auto-complete nil)
 (setq-default ac-auto-start t)
-(setq ac-auto-start 2)
+; (setq ac-auto-start 2)
 (setq-default ac-dwim nil) ; To get pop-ups with docs even if a word is uniquely completed
 
 ;;----------------------------------------------------------------------------
@@ -37,25 +37,43 @@
 (add-hook 'auto-complete-mode-hook 'set-auto-complete-as-completion-at-point-function)
 
 ;;====================yasnippet config======================================
-(defface ac-yasnippet-candidate-face
-         '((t (:background "sandybrown" :foreground "black")))
-         "Face for yasnippet candidate.")
 
-(defface ac-yasnippet-selection-face
-         '((t (:background "coral3" :foreground "white")))
-         "Face for the yasnippet selected candidate.")
+; (defun ac-yasnippet-candidate-1 (table)
+  ; (let ((hashtab (yas/snippet-table-hash table))
+        ; (parent (yas/snippet-table-parent table))
+        ; candidates)
+    ; (maphash (lambda (key value)
+               ; (push key candidates))
+             ; hashtab)
+    ; (setq candidates (all-completions ac-prefix (nreverse candidates)))
+    ; (if parent
+        ; (setq candidates
+              ; (append candidates (ac-yasnippet-candidate-1 parent))))
+    ; candidates))
 
-(defvar ac-source-yasnippet
-  '((candidates . ac-yasnippet-candidate)
-    (action . yas/expand)
-    (candidate-face . ac-yasnippet-candidate-face)
-    (selection-face . ac-yasnippet-selection-face))
-  "Source for Yasnippet.")
+; (defun ac-yasnippet-candidate ()
+  ; (let ((table (yas/snippet-table major-mode)))
+    ; (if table
+        ; (ac-yasnippet-candidate-1 table))))
+
+; (defface ac-yasnippet-candidate-face
+         ; '((t (:background "sandybrown" :foreground "black")))
+         ; "Face for yasnippet candidate.")
+
+; (defface ac-yasnippet-selection-face
+         ; '((t (:background "coral3" :foreground "white")))
+         ; "Face for the yasnippet selected candidate.")
+
+; (defvar ac-source-yasnippet
+  ; '((candidates . ac-yasnippet-candidate)
+    ; (action . yas/expand)
+    ; (candidate-face . ac-yasnippet-candidate-face)
+    ; (selection-face . ac-yasnippet-selection-face))
+  ; "Source for Yasnippet.")
 ;;====================yasnippet config end===================================
 
 (set-default 'ac-sources
              '(ac-source-imenu
-               ac-source-yasnippet
                ac-source-dictionary
                ac-source-words-in-buffer
                ac-source-words-in-same-mode-buffers
